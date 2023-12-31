@@ -26,19 +26,24 @@
         app:labelVisibilityMode="labeled"
         app:menu="@menu/bottom_nav_menu" />
 
-    <FrameLayout
-        android:id="@+id/bottom_player_container"
-        style="@style/ApplyInsets"
-        android:layout_width="match_parent"
+<!--    <FrameLayout-->
+<!--        android:id="@+id/bottom_player_container"-->
+<!--        style="@style/ApplyInsets"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"-->
+<!--        android:background="?attr/colorSurfaceContainerLow"-->
+<!--        app:behavior_peekHeight="152dp"-->
+<!--        app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">-->
+
+    <include
+        app:layout_anchorGravity="bottom"
+        android:id="@+id/bottom_player"
+        app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior"
+        layout="@layout/bottom_player"
         android:layout_height="match_parent"
-        android:background="?attr/colorSurfaceContainerLow"
-        app:behavior_peekHeight="152dp"
-        app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
+        android:layout_width="match_parent" />
 
-        <include
-            android:id="@+id/bottom_player"
-            layout="@layout/bottom_player" />
 
-    </FrameLayout>
+<!--    </FrameLayout>-->
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

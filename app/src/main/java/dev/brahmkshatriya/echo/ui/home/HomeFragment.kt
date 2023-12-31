@@ -1,16 +1,26 @@
 package dev.brahmkshatriya.echo.ui.home
 
 import android.os.Bundle
+import android.view.LayoutInflater
 import android.view.View
-import dev.brahmkshatriya.echo.BaseFragment
+import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import dev.brahmkshatriya.echo.databinding.FragmentHomeBinding
+import dev.brahmkshatriya.echo.handleMiniPlayer
+import dev.brahmkshatriya.echo.ui.utils.autoCleared
 
-class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::inflate) {
+class HomeFragment: Fragment() {
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
+    private var binding: FragmentHomeBinding by autoCleared()
 
-        updateRootPadding()
-
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View {
+        handleMiniPlayer()
+        binding = FragmentHomeBinding.inflate(inflater, container, false)
+        return binding.root
     }
+
 }
